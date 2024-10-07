@@ -2,7 +2,7 @@
 ========
 
 This is a repository of 2Dof manipulator example written in plain C++ using the
-[CPPFMU] framework.
+[cpp-fmus] framework.
 
 Prerequisites
 --------------
@@ -25,6 +25,7 @@ Run `buildfmu.cmd`
 
 `manipulator.fmu` will be created in `cmake-build-release` directory.
 
+[cpp-fmus]: https://github.com/open-simulation-platform/cpp-fmus
 [git]: https://git-scm.com/
 [conan]: https://conan.io/
 [cmake]: https://cmake.org
