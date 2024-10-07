@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OspSystemStructure xmlns="http://opensimulationplatform.com/MSMI/OSPSystemStructure" version="0.1">
+    <StartTime>0.0</StartTime>
+    <BaseStepSize>0.01</BaseStepSize>
+    <Algorithm>fixedStep</Algorithm>
+    <Simulators>
+        <Simulator name="m1" source="manipulator.fmu">
+            <InitialValues>
+                <InitialValue variable="Kp1">
+                    <Real value="300"/>
+                </InitialValue>
+                <InitialValue variable="Ki1">
+                    <Real value="1"/>
+                </InitialValue>
+                <InitialValue variable="Kd1">
+                    <Real value="50"/>
+                </InitialValue>
+
+                <InitialValue variable="ref1">
+                    <Real value="1.57"/>
+                </InitialValue>
+                <InitialValue variable="ref2">
+                    <Real value="-1.57"/>
+                </InitialValue>
+
+                <InitialValue variable="l1">
+                    <Real value="1.0"/>
+                </InitialValue>
+                <InitialValue variable="l2">
+                    <Real value="1.0"/>
+                </InitialValue>
+                <InitialValue variable="m1">
+                    <Real value="0.5"/>
+                </InitialValue>
+                <InitialValue variable="m2">
+                    <Real value="0.5"/>
+                </InitialValue>
+            </InitialValues>
+        </Simulator>
+    </Simulators>
+    <Connections>
+        <!--        <VariableConnection>-->
+        <!--            <Variable name="v[2]" simulator="Producer1"/>-->
+        <!--            <Variable name="u1" simulator="modbus_slave1"/>-->
+        <!--        </VariableConnection>-->
+    </Connections>
+</OspSystemStructure>

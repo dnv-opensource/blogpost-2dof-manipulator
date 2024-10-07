@@ -1,0 +1,7 @@
+*.swp
+.venv
+.idea
+cmake-build-*
+CMakeUserPresets.json
+CMakeFiles
+notebook/a.gif

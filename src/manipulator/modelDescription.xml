@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<fmiModelDescription
+    fmiVersion="2.0"
+    modelName="manipulator"
+    guid="@FMU_UUID@"
+    description="Two degrees freedom Robot Arm"
+    author="DNV"
+    version="0.1">
+
+    <CoSimulation
+        modelIdentifier="manipulator"
+        canHandleVariableCommunicationStepSize="true" />
+
+    <ModelVariables>
+        <ScalarVariable name="l1" valueReference="0" causality="parameter"  variability="fixed"><Real start="1.0"/></ScalarVariable>
+        <ScalarVariable name="l2" valueReference="1" causality="parameter"  variability="fixed"><Real start="1.0"/></ScalarVariable>
+        <ScalarVariable name="m1" valueReference="2" causality="parameter"  variability="fixed"><Real start="0.5"/></ScalarVariable>
+        <ScalarVariable name="m2" valueReference="3" causality="parameter"  variability="fixed"><Real start="0.5"/></ScalarVariable>
+
+        <ScalarVariable name="q1"   valueReference="4"   causality="output" variability="continuous"><Real/></ScalarVariable>
+        <ScalarVariable name="q2"   valueReference="5"   causality="output" variability="continuous"><Real/></ScalarVariable>
+        <ScalarVariable name="ref1" valueReference="6"   causality="input" variability="continuous"><Real start="0.0"/></ScalarVariable>
+        <ScalarVariable name="ref2" valueReference="7"   causality="input" variability="continuous"><Real start="0.0"/></ScalarVariable>
+
+        <ScalarVariable name="Kp1" valueReference="8"  causality="parameter"   variability="fixed"><Real  start="200.0"/></ScalarVariable>
+        <ScalarVariable name="Kd1" valueReference="9"  causality="parameter"   variability="fixed"><Real  start="30.0"/></ScalarVariable>
+        <ScalarVariable name="Ki1" valueReference="10" causality="parameter"  variability="fixed"><Real  start="1.0"/></ScalarVariable>
+        <ScalarVariable name="Kp2" valueReference="11"  causality="parameter"   variability="fixed"><Real  start="0.0"/></ScalarVariable>
+        <ScalarVariable name="Kd2" valueReference="12"  causality="parameter"   variability="fixed"><Real  start="0.0"/></ScalarVariable>
+        <ScalarVariable name="Ki2" valueReference="13" causality="parameter"  variability="fixed"><Real  start="0.0"/></ScalarVariable>
+    </ModelVariables>
+
+    <ModelStructure>
+        <Outputs>
+            <Unknown index="4" />
+            <Unknown index="5" />
+        </Outputs>
+    </ModelStructure>
+
+</fmiModelDescription>
+
+

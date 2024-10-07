@@ -1,0 +1,6 @@
+[submodule "cppfmu"]
+	path = cppfmu
+	url = https://github.com/viproma/cppfmu.git
+[submodule "xtensor-blas"]
+	path = xtensor-blas
+	url = https://github.com/xtensor-stack/xtensor-blas.git

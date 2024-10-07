@@ -1,0 +1,19 @@
+{
+  "defaults": {
+    "model": "m1",
+    "action": "override"
+  },
+  "events": [
+    {
+      "time": 20,
+      "variable": "ref1",
+      "value": 1.57
+    },
+    {
+      "time": 20,
+      "variable": "ref2",
+      "value": -1.57
+    }
+  ],
+  "end": 60.0
+}
