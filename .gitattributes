@@ -26,3 +26,5 @@
 *.md textgg
 
 buildfmu eol=lf
+conan-linux64.lock eol=lf
+conan-win64.lock eol=crlf

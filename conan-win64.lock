@@ -1,0 +1,13 @@
+{
+    "version": "0.5",
+    "requires": [
+        "xtl/0.7.5#09fbb7d54f9d50c029dbc73132d79cbc%1673626751.159",
+        "xtensor/0.25.0#1740e4bfb8f3b8344204c88e6dbd264b%1706452983.178",
+        "xsimd/12.0.0#73516895c35b9df1f87b0829f7ea905f%1715440300.242",
+        "openblas/0.3.27#c16c3dbdf45e4a4ff56f8ada8631a2f3%1717151432.687",
+        "nlohmann_json/3.11.3#45828be26eb619a2e04ca517bb7b828d%1701220705.259"
+    ],
+    "build_requires": [],
+    "python_requires": [],
+    "config_requires": []
+}
