@@ -10,7 +10,7 @@ Prerequisites
 1. [git]
 2. [conan]>=2.0
 3. [cmake]>= 3.26.3
-4. gcc>=11 (Linux) or [Build Tools for Visual Studio 2022] (Windows)
+4. gcc>=11 (Linux) or [Build Tools for Visual Studio 2019] (Windows)
 
 
 How to build
@@ -28,4 +28,4 @@ Run `buildfmu.cmd`
 [git]: https://git-scm.com/
 [conan]: https://conan.io/
 [cmake]: https://cmake.org
-[Build Tools for Visual Studio 2022]: https://visualstudio.microsoft.com/downloads/
+[Build Tools for Visual Studio 2019]: https://visualstudio.microsoft.com/vs/older-downloads/
