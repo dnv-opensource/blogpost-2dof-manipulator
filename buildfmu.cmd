@@ -1,6 +1,7 @@
 @echo off
 git submodule init
 git submodule update
+conan profile detect -f
 conan install . -of cmake-build-release -b missing
 mkdir xtensor-blas/build
 cmake -B xtensor-blas/build -DCMAKE_TOOLCHAIN_FILE=../../cmake-build-release/conan_toolchain.cmake ^

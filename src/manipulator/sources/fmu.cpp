@@ -1,4 +1,11 @@
-#pragma warning(disable : 4244)
+#ifdef _WIN32
+#    pragma warning(disable : 4244)
+#endif
+
+#ifdef __GNUC__
+#    pragma GCC diagnostic push
+#    pragma GCC diagnostic ignored "-Wunused-parameter"
+#endif
 
 #include "fmu-uuid.h"
 
@@ -112,7 +119,7 @@ public:
         std::size_t nvr,
         const cppfmu::FMIReal value[]) override
     {
-        for (int i = 0; i < nvr; i++) {
+        for (size_t i = 0; i < nvr; i++) {
             values[vr[i]] = value[i];
         }
         if (!initialized_) {
@@ -143,8 +150,8 @@ public:
 
     bool DoStep(cppfmu::FMIReal t,
         cppfmu::FMIReal h,
-        cppfmu::FMIBoolean /*newStep*/,
-        cppfmu::FMIReal& /*endOfStep*/) override
+        cppfmu::FMIBoolean newStep,
+        cppfmu::FMIReal& endOfStep) override
     {
         compute_b();
         compute_c();
@@ -172,3 +179,7 @@ cppfmu::UniquePtr<cppfmu::SlaveInstance> CppfmuInstantiateSlave(
     }
     return cppfmu::AllocateUnique<TwoDoFManipulator>(memory);
 }
+
+#ifdef __GNUC__
+#    pragma GCC diagnostic pop
+#endif
