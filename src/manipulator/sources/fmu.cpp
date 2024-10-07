@@ -162,7 +162,6 @@ public:
         dq = dq + ddq * h;
         q = xt_wrap_radians<M21>(q + dq * h);
 
-        std::cout << q << std::endl;
         return true;
     }
 };

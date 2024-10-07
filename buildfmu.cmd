@@ -2,11 +2,11 @@
 git submodule init
 git submodule update
 conan profile detect -f
-conan install . -of cmake-build-release -b missing --lockfile conan-win64.lock
+conan install . -of cmake-build-release-win64 -b missing --lockfile conan-win64.lock
 mkdir xtensor-blas/build
-cmake -B xtensor-blas/build -DCMAKE_TOOLCHAIN_FILE=../../cmake-build-release/conan_toolchain.cmake ^
+cmake -B xtensor-blas/build -DCMAKE_TOOLCHAIN_FILE=../../cmake-build-release-win64/conan_toolchain.cmake ^
                             -DCMAKE_POLICY_DEFAULT_CMP0091=NEW ^
-                            -DCMAKE_INSTALL_PREFIX=cmake-build-release ^
+                            -DCMAKE_INSTALL_PREFIX=cmake-build-release-win64 ^
                             --fresh ^
                             xtensor-blas
 cmake --build xtensor-blas/build --config Release --target install
