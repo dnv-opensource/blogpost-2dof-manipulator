@@ -6,3 +6,4 @@ CMakeUserPresets.json
 CMakeFiles
 notebook/a.gif
 manipulator.fmu
+.vscode
