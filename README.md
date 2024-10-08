@@ -17,7 +17,7 @@ How to build
 ------------
 
 ### Linux
-Run `./buildfmu`
+Run `buildfmu`
 
 ### Windows
 Run `buildfmu.cmd`
