@@ -23,7 +23,7 @@ Run `buildfmu`
 Run `buildfmu.cmd`
 
 
-`manipulator.fmu` will be created in `cmake-build-release` directory.
+`manipulator.fmu` will be created in `cmake-build-release-(linux64|win64)` directory.
 
 [cpp-fmus]: https://github.com/open-simulation-platform/cpp-fmus
 [git]: https://git-scm.com/
