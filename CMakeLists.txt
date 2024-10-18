@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.30)
+cmake_minimum_required(VERSION 3.5)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 project(cppfmu-2dof-manipulator)
@@ -94,6 +94,7 @@ else ()
 endif ()
 
 
+# This is a workaround for xtensor-blas cannot find LAPACK from OpenBLAS
 find_package(OpenBLAS REQUIRED)
 find_package(BLAS REQUIRED)
 set(configFile "${CMAKE_CURRENT_SOURCE_DIR}/cmake-build-release/lib/cmake/xtensor-blas/xtensor-blasConfig.cmake")

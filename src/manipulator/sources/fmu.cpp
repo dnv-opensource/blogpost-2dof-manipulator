@@ -1,5 +1,6 @@
 #ifdef _WIN32
 #    pragma warning(disable : 4244)
+#    pragma warning(disable : 4100)
 #endif
 
 #ifdef __GNUC__
