@@ -15,12 +15,14 @@ class Manipulator(ConanFile):
     # Binary configuration
     settings = "os", "compiler", "build_type", "arch"
     options = {"shared": [True, False], "fPIC": [True, False]}
-    default_options = {"shared": False, "fPIC": True}
 
-    requires = (
-        "xtensor/0.25.0",
-        "openblas/0.3.27"
-    )
+    requires = ("xtensor/0.25.0", "openblas/0.3.27")
+
+    default_options = {
+        "shared": False,
+        "fPIC": True,
+        "openblas/*:build_lapack": True,
+    }
 
     # Sources are located in the same place as this recipe, copy them to the recipe
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
@@ -48,10 +50,9 @@ class Manipulator(ConanFile):
             cli_args=[
                 "-B xtensor-blas/build",
                 "--fresh",
-            ])
-        cmake.install(
-            cli_args=["xtensor-blas/build"]
+            ],
         )
+        cmake.install(cli_args=["xtensor-blas/build"])
 
     def build(self):
         self.build_xtensor_blas()

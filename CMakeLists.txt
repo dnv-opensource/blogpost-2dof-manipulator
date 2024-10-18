@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0)
+cmake_minimum_required(VERSION 3.30)
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
 
 project(cppfmu-2dof-manipulator)
@@ -93,6 +93,14 @@ else ()
     set(configStagingDir "${FMU_STAGING_DIR}")
 endif ()
 
+
+find_package(OpenBLAS REQUIRED)
+find_package(BLAS REQUIRED)
+set(configFile "${CMAKE_CURRENT_SOURCE_DIR}/cmake-build-release/lib/cmake/xtensor-blas/xtensor-blasConfig.cmake")
+file(READ ${configFile} xtensor_blasConfig)
+string(REPLACE "find_dependency(LAPACK REQUIRED)" "set(LAPACK_LIBRARIES \${BLAS_LIBRARIES})" xtensor_blasConfig "${xtensor_blasConfig}")
+file(WRITE ${configFile} "${xtensor_blasConfig}")
+
 find_package(xtensor REQUIRED)
 find_package(xtensor-blas REQUIRED)
 
@@ -170,6 +178,9 @@ foreach(fmuName IN LISTS fmus)
 
     if (fmuLibraryTarget STREQUAL "manipulator")
         target_link_libraries(${fmuLibraryTarget} xtensor xtensor-blas)
+        if(WIN32)
+            SET_TARGET_PROPERTIES(${fmuLibraryTarget} PROPERTIES COMPILE_FLAGS "/EHsc")
+        endif()
     endif ()
 
 endforeach()
