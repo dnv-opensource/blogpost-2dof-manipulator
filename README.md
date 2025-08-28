@@ -24,6 +24,8 @@ Run `buildfmu.cmd` (or `.\buildfmu.cmd`).
 
 `manipulator.fmu` will be created in `cmake-build-release-(linux64|win64)` directory.
 
+You can find pre-built FMUs for Linux and Windows in [Releases](https://github.com/dnv-opensource/blogpost-2dof-manipulator/releases)
+
 ## How to use
 
 You can now use the FMU for co-simulation in various tools.
