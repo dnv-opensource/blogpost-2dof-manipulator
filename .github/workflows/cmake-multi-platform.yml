@@ -22,7 +22,12 @@ jobs:
       uses: jwidauer/setup-conan@v1
           
     - name: BuildFmu
-      run: ./buildfmu
+      if: ${{ runner.os }} == 'Linux'
+      run: source buildfmu
+
+    - name: BuildFmu
+      if: ${{ runner.os }} == 'Windows'
+      run: buildfmu
 
     - uses: actions/upload-artifact@v4
       with:
